@@ -13,6 +13,10 @@ cd imake
 wget --no-check-certificate https://www.x.org/archive/individual/util/imake-1.0.7.tar.gz
 tar -zxvf imake-1.0.7.tar.gz
 
+sed -i 's/# Flag to tell compiler to output dependencies directly/ /g' imake-1.0.7/mdepend.cpp
+sed -i 's/# For example, with Sun compilers, -xM or -xM1 or/ /g' imake-1.0.7/mdepend.cpp
+sed -i 's/# with gcc, -M/ /g' imake-1.0.7/mdepend.cpp
+
 mkdir build
 cd build
 
